@@ -8,5 +8,3 @@ export default function App() {
       </NavigationContainer>
   );
 }
-
-teste teste teste teste teste 
