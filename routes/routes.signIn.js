@@ -1,12 +1,12 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
-import Welcome from '../pages/Welcome';
-import SignIn from '../pages/SignIn'
-import Register from '../pages/Register'
+import Welcome from '/src/pages/Inicio/Welcome';
+import SignIn from '/src/pages/Inicio/SignIn'
+import Register from '/src/pages/Inicio/Register'
 
 const Stack = createNativeStackNavigator();
 
-export default function Routes() {
+export default function RoutesSignIn() {
     return (
         <Stack.Navigator>
             <Stack.Screen
