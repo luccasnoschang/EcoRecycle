@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { View, Text, StyleSheet, TextInput, TouchableOpacity } from "react-native";
 import { Feather } from '@expo/vector-icons';
 
@@ -6,9 +6,15 @@ import * as Animatable from 'react-native-animatable';
 
 import { useNavigation } from "@react-navigation/native";
 
-
 export default function SignIn() {
     const navigation = useNavigation();
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    
+    function handleLogin(){
+        navigation.navigate("Home");
+    }
+    
     return (
         <View style={styles.container}>
             <Animatable.View animation="fadeInLeft" delay={500} style={styles.containerHeader}>
@@ -27,17 +33,21 @@ export default function SignIn() {
 
                 <Text style={styles.title}>EMAIL</Text>
                 <TextInput
+                    value={email}
                     placeholder="Digite um email..."
                     style={styles.input}
+                    onChangeText={(text) => setEmail(text)}
                 />
 
                 <Text style={styles.title}>SENHA</Text>
                 <TextInput
+                    value={password}
                     placeholder="Sua senha"
                     style={styles.input}
+                    onChangeText={(text) => setPassword(text)} 
                 />
 
-                <TouchableOpacity style={styles.button}>
+                <TouchableOpacity style={styles.button} onPress={handleLogin}>
                     <Text style={styles.buttonText}>Acessar</Text>
                 </TouchableOpacity>
                 
