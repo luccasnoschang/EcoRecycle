@@ -2,12 +2,15 @@ import React, { useState } from 'react';
 import { StyleSheet, Text, View, ScrollView, StatusBar, SafeAreaView, Platform, Image, TouchableOpacity } from 'react-native';
 import { Feather } from '@expo/vector-icons';
 
+import { useNavigation } from '@react-navigation/native';
+
 const statusBarHeight = StatusBar.currentHeight;
 
 export default function Profile() {
+  const navigation = useNavigation();
 
-  const [imagemPerfil, setImagemPerfil] = useState(require('../../../src/img/perfil.png'))
-  const [separador, setSeparador] = useState(require('../../../src/img/separador.png'))
+  const [imagemPerfil, setImagemPerfil] = useState(require('../../../assets/img/perfil.png'))
+  const [separador, setSeparador] = useState(require('../../../assets/img/separador.png'))
 
   return (
     <SafeAreaView style={styles.container}>

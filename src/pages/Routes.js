@@ -1,17 +1,19 @@
 import React from "react";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-
-import Home from "./pages/Home";
-import New from "./pages/New";
-import Profile from "./pages/Profile";
-
-import ButtonNew from "./components/ButtonNew";
-
 import { Entypo, Feather } from '@expo/vector-icons';
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { useNavigation } from "@react-navigation/native";
+
+import Home from "../pages/Home";
+import New from "../pages/New";
+import Profile from "../pages/Profile";
+
+import ButtonNew from "../components/ButtonNew";
 
 const Tab = createBottomTabNavigator();
 
-export default function Routes() {
+const Routes = ({ navigation }) => {
+    // const { state, dispatch } = useContext(Context)
+
     return (
         <Tab.Navigator
             tabBarOptions={{
@@ -67,3 +69,5 @@ export default function Routes() {
         </Tab.Navigator>
     )
 } 
+
+export default Routes

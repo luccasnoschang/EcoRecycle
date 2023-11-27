@@ -1,30 +1,34 @@
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { useNavigation } from "@react-navigation/native";
 
-import Welcome from '/src/pages/Inicio/Welcome';
-import SignIn from '/src/pages/Inicio/SignIn'
-import Register from '/src/pages/Inicio/Register'
+import Welcome from '../pages/Welcome';
+import SignIn from '../pages/SignIn'
+import Register from '../pages/Register'
 
 const Stack = createNativeStackNavigator();
 
 export default function RoutesSignIn() {
+    const navigation = useNavigation();
+
     return (
+
         <Stack.Navigator>
             <Stack.Screen
                 name="Welcome"
                 component={Welcome}
-                options={{headerShown:false,}}
+                options={{ headerShown: false, }}
             />
 
             <Stack.Screen
                 name="SignIn"
                 component={SignIn}
-                options={{headerShown:false,}}
+                options={{ headerShown: false, }}
             />
 
             <Stack.Screen
                 name="Register"
                 component={Register}
-                options={{headerShown:false,}}
+                options={{ headerShown: false, }}
             />
 
         </Stack.Navigator>

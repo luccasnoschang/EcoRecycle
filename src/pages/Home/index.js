@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import { StyleSheet, Text, View, ScrollView, StatusBar, SafeAreaView, Platform } from 'react-native';
 import BouncyCheckbox from "react-native-bouncy-checkbox";
 
-import { useNavigation } from '@react-navigation/native';
-
 const statusBarHeight = StatusBar.currentHeight;
+
+import { useNavigation } from '@react-navigation/native';
 
 export default function Home() {
   const navigation = useNavigation();
