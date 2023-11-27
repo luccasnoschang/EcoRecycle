@@ -6,11 +6,18 @@ import * as Animatable from 'react-native-animatable';
 
 import { useNavigation } from "@react-navigation/native";
 
-export default function SignIn() {
-    const navigation = useNavigation();
+export default function SignIn({ navigation }) {
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+
+    const entrar = () => {
+        navigation.reset({
+            index:0,
+            routes: [{name:"Routes"}]
+        })
+    
+    }
 
     return (
         <View style={styles.container}>
@@ -34,6 +41,7 @@ export default function SignIn() {
                     placeholder="Digite um email..."
                     style={styles.input}
                     onChangeText={(text) => setEmail(text)}
+                    keyboardType="email-address"
                 />
 
                 <Text style={styles.title}>SENHA</Text>
@@ -41,20 +49,21 @@ export default function SignIn() {
                     value={password}
                     placeholder="Sua senha"
                     style={styles.input}
-                    onChangeText={(text) => setPassword(text)} 
+                    onChangeText={(text) => setPassword(text)}
+                    secureTextEntry={true}
                 />
 
-                <TouchableOpacity style={styles.button}>
+                <TouchableOpacity style={styles.button} onPress={() => entrar()}>
                     <Text style={styles.buttonText}>Acessar</Text>
                 </TouchableOpacity>
-                
+
                 <TouchableOpacity
                     style={styles.buttonRegister}
                     onPress={() => navigation.navigate('Register')}
                 >
                     <Text style={styles.registerText}>Não possui uma conta? Cadastre-se</Text>
                 </TouchableOpacity>
-                
+
             </Animatable.View>
         </View>
     );

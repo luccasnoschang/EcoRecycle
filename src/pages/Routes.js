@@ -1,17 +1,33 @@
 import React from "react";
 import { Entypo, Feather } from '@expo/vector-icons';
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { useNavigation } from "@react-navigation/native";
 
 import Home from "../pages/Home";
 import New from "../pages/New";
 import Profile from "../pages/Profile";
+import Organico from "../pages/Recycling/organico"
+import Papel from "../pages/Recycling/papel"
 
 import ButtonNew from "../components/ButtonNew";
 
-const Tab = createBottomTabNavigator();
+const Stack = createNativeStackNavigator();
+function RecyclingRoutes(){
+    return(
 
-const Routes = ({ navigation }) => {
+        <Stack.Navigator>
+            <Stack.Screen
+                name="New"
+                component={New}
+                options={{ headerShown: false, }}
+            />
+        </Stack.Navigator>
+    )
+}
+
+const Tab = createBottomTabNavigator();
+function Routes() {
     // const { state, dispatch } = useContext(Context)
 
     return (
@@ -47,7 +63,7 @@ const Routes = ({ navigation }) => {
 
             <Tab.Screen
                 name="Novo"
-                component={New}
+                component={RecyclingRoutes}
                 options={{
                     tabBarLabel: '',
                     tabBarIcon: ({ focused, size }) => (

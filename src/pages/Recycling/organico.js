@@ -10,19 +10,7 @@ export default function Organico() {
       <Text style={styles.text}>Página Organicos</Text>
 
       <View>
-
-        <TouchableOpacity style={styles.botao} onPress={() => navigation.navigate('Papel')}>
-          <Text>
-            Ir para Papeis
-          </Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity style={styles.botao} onPress={() => navigation.navigate('Organico')}>
-          <Text>
-            Ir para Organicos
-          </Text>
-        </TouchableOpacity>
-
+          <Text>Papeis</Text>
       </View>
 
     </View>
