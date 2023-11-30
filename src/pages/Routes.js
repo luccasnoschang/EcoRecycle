@@ -22,6 +22,14 @@ function RecyclingRoutes(){
                 component={New}
                 options={{ headerShown: false, }}
             />
+            <Stack.Screen
+                name="Papel"
+                component={Papel}
+            />
+            <Stack.Screen
+                name="Organico"
+                component={Organico}
+            />
         </Stack.Navigator>
     )
 }
