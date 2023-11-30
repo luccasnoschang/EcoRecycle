@@ -8,7 +8,11 @@ import Home from "../pages/Home";
 import New from "../pages/New";
 import Profile from "../pages/Profile";
 import Organico from "../pages/Recycling/organico"
+import Eletronico from "../pages/Recycling/eletronico"
 import Papel from "../pages/Recycling/papel"
+import Plastico from "../pages/Recycling/plastico"
+import Vidro from "../pages/Recycling/vidro"
+import Metal from "../pages/Recycling/metal"
 
 import ButtonNew from "../components/ButtonNew";
 
@@ -29,6 +33,26 @@ function RecyclingRoutes(){
             <Stack.Screen
                 name="Organico"
                 component={Organico}
+            />
+            <Stack.Screen
+                name="Eletronico"
+                component={Eletronico}
+            />
+            <Stack.Screen
+                name="Vidro"
+                component={Vidro}
+            />
+            <Stack.Screen
+                name="Plastico"
+                component={Plastico}
+            />
+            <Stack.Screen
+                name="Metal"
+                component={Metal}
+            />
+            <Stack.Screen
+                name="Home"
+                component={Home}
             />
         </Stack.Navigator>
     )

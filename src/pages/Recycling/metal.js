@@ -1,14 +1,13 @@
 import React, { useState } from 'react';
 import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import api from '../../api'
 
-export default function Organico() {
+export default function Papel() {
   const navigation = useNavigation();
 
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>Página Organicos</Text>
+      <Text style={styles.text}>Página Metais</Text>
 
     </View>
   );

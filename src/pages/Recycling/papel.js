@@ -8,12 +8,7 @@ export default function Papel() {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>Página Papeis</Text>
-
-      <View>  
-          <Text>Organicos</Text>
-      </View>
-
+      <Text style={styles.text}>Página Organicos</Text>
     </View>
   );
 }
