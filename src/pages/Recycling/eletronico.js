@@ -7,7 +7,7 @@ export default function Papel() {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>Página Organicos</Text>
+      <Text style={styles.text}>Página Eletrônicos</Text>
     </View>
   );
 }

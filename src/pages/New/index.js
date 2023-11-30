@@ -7,7 +7,7 @@ export default function Organico() {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>Página Organicos</Text>
+      <Text style={styles.text}>Página Cadastrar Lixos</Text>
 
       <View>
 
@@ -20,6 +20,30 @@ export default function Organico() {
         <TouchableOpacity style={styles.botao} onPress={() => navigation.navigate('Organico')}>
           <Text>
             Ir para Organicos
+          </Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity style={styles.botao} onPress={() => navigation.navigate('Eletronico')}>
+          <Text>
+            Ir para Eletrônicos
+          </Text>
+        </TouchableOpacity>
+    
+        <TouchableOpacity style={styles.botao} onPress={() => navigation.navigate('Metal')}>
+          <Text>
+            Ir para Metal
+          </Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity style={styles.botao} onPress={() => navigation.navigate('Plastico')}>
+          <Text>
+            Ir para Plástico
+          </Text>
+        </TouchableOpacity>
+
+        <TouchableOpacity style={styles.botao} onPress={() => navigation.navigate('Vidro')}>
+          <Text>
+            Ir para Vidro
           </Text>
         </TouchableOpacity>
 

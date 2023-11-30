@@ -9,10 +9,6 @@ export default function Organico() {
     <View style={styles.container}>
       <Text style={styles.text}>Página Organicos</Text>
 
-      <View>
-          <Text>Papeis</Text>
-      </View>
-
     </View>
   );
 }
