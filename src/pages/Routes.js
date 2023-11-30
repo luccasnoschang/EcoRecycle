@@ -50,6 +50,10 @@ function RecyclingRoutes(){
                 name="Metal"
                 component={Metal}
             />
+            <Stack.Screen
+                name="Home"
+                component={Home}
+            />
         </Stack.Navigator>
     )
 }

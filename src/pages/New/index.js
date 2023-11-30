@@ -7,15 +7,17 @@ export default function Organico() {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>Página Cadastrar Lixos</Text>
+      <Text style={styles.text}>Cadastre seus lixos aqui</Text>
 
       <View>
 
-        <TouchableOpacity style={styles.botao} onPress={() => navigation.navigate('Papel')}>
-          <Text>
-            Ir para Papeis
-          </Text>
-        </TouchableOpacity>
+        <View style={styles.content}>
+          <TouchableOpacity style={styles.botao} onPress={() => navigation.navigate('Papel')}>
+            <Text>
+              Ir para Papeis
+            </Text>
+          </TouchableOpacity>
+        </View>
 
         <TouchableOpacity style={styles.botao} onPress={() => navigation.navigate('Organico')}>
           <Text>
@@ -28,7 +30,7 @@ export default function Organico() {
             Ir para Eletrônicos
           </Text>
         </TouchableOpacity>
-    
+
         <TouchableOpacity style={styles.botao} onPress={() => navigation.navigate('Metal')}>
           <Text>
             Ir para Metal
@@ -55,6 +57,7 @@ export default function Organico() {
 
 const styles = StyleSheet.create({
   container: {
+    width: '90%',
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
@@ -62,5 +65,20 @@ const styles = StyleSheet.create({
   text: {
     fontSize: 25,
     fontWeight: 'bold',
-  }
+    color: '#40916c',
+  },
+  content: {
+    flex: 1,
+    alignSelf: 'center',
+    width: '90%',
+    height: 120,
+    marginBottom: 5,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: 20,
+    alignItems: 'start',
+    marginTop: 20,
+    gap: 20,
+  },
 });
