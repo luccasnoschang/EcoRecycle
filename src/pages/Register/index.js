@@ -4,6 +4,7 @@ import { View, Text, StyleSheet, TextInput, TouchableOpacity, ScrollView } from 
 import * as Animatable from 'react-native-animatable';
 
 import { useNavigation } from "@react-navigation/native";
+import api from '../../api'
 
 export default function Register() {
     const navigation = useNavigation();

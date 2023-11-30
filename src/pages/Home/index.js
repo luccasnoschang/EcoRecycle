@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { StyleSheet, Text, View, ScrollView, StatusBar, SafeAreaView, Platform } from 'react-native';
 import BouncyCheckbox from "react-native-bouncy-checkbox";
+import api from '../../api'
 
 const statusBarHeight = StatusBar.currentHeight;
 

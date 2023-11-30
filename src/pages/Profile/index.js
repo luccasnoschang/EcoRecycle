@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { StyleSheet, Text, View, ScrollView, StatusBar, SafeAreaView, Platform, Image, TouchableOpacity } from 'react-native';
 import { Feather } from '@expo/vector-icons';
+import api from '../../api'
 
 import { useNavigation } from '@react-navigation/native';
 

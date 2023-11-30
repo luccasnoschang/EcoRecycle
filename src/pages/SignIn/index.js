@@ -3,6 +3,7 @@ import { View, Text, StyleSheet, TextInput, TouchableOpacity } from "react-nativ
 import { Feather } from '@expo/vector-icons';
 
 import * as Animatable from 'react-native-animatable';
+import api from '../../api'
 
 import { useNavigation } from "@react-navigation/native";
 
