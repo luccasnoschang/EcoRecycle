@@ -2,23 +2,38 @@ import React, { useState } from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, TextInput } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
+export default function Eletronico() {
 
-export default function Papel() {
+  function verifica() {
+    if (input == '' || input == null) {
+      alert("Digite um valor")
+    } else {
+      alert("Lixo cadastrado!")
+    }
+  }
+
+  const [input, setInput] = useState('')
   const navigation = useNavigation();
 
   return (
     <View style={styles.container}>
-      <Text style={styles.text}>Página Eletrônicos</Text>
+      <Text style={styles.text}>Cadastre seu lixo Eletrônico</Text>
 
-      <Text style={styles.title}>Cadastre seu lixo eletrônico</Text>
-      <TextInput
-        placeholder="Cadastre a quantidade de lixo reciclado..."
-        style={styles.input}
-      />
+      <View style={styles.card}>
 
-      <TouchableOpacity style={styles.button} onPress={() => navigation.navigate('Home')}>
-        <Text style={styles.buttonText}>Cadastrar</Text>
-      </TouchableOpacity>
+        <Text style={styles.title}>Quantos kg você reciclou?</Text>
+        <TextInput
+          placeholder="''15''"
+          style={styles.input}
+          value={input}
+          onChangeText={(text) => setInput(text)}
+        />
+
+        <TouchableOpacity style={styles.button} onPress={() => verifica() }>
+          <Text style={styles.buttonText}>Cadastrar</Text>
+        </TouchableOpacity>
+
+      </View>
     </View>
 
   );
@@ -29,12 +44,11 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#fff',
   },
   text: {
     fontSize: 25,
     fontWeight: 'bold',
-
+    color: '#40916c',
   },
   title: {
     fontSize: 17,
@@ -50,6 +64,7 @@ const styles = StyleSheet.create({
     width: '85%',
     padding: 25,
     color: '#8F8E8E',
+    textAlign: 'center',
   },
   button: {
     alignSelf: 'center',
@@ -65,5 +80,17 @@ const styles = StyleSheet.create({
     color: '#fff',
     fontSize: '18',
     fontWeight: 'bold',
-},
+  },
+  card: {
+    marginTop: 70,
+    alignSelf: 'center',
+    width: '90%',
+    height: 300,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "white",
+    marginBottom: 30,
+    borderRadius: 35,
+    gap: 20,
+  },
 });

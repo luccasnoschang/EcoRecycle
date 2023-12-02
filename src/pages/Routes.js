@@ -20,7 +20,12 @@ const Stack = createNativeStackNavigator();
 function RecyclingRoutes(){
     return(
 
-        <Stack.Navigator>
+        <Stack.Navigator
+        screenOptions={{
+            headerShown:false,
+        }}
+        >
+            
             <Stack.Screen
                 name="New"
                 component={New}
@@ -49,10 +54,6 @@ function RecyclingRoutes(){
             <Stack.Screen
                 name="Metal"
                 component={Metal}
-            />
-            <Stack.Screen
-                name="Home"
-                component={Home}
             />
         </Stack.Navigator>
     )
