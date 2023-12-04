@@ -80,7 +80,8 @@ function Routes() {
                     position: 'absolute',
                     // backgroundColor:'#171626',
                     borderTopWidth: 0,
-                    borderRadius: 25,
+                    borderTopRightRadius: 25,
+                    borderTopLeftRadius: 25,
                 }
             }}
         >

@@ -43,6 +43,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
+    backgroundColor:'#DBDBDB',
   },
   text: {
     fontSize: 25,
@@ -55,7 +56,7 @@ const styles = StyleSheet.create({
   },
   input: {
     alignSelf: 'center',
-    backgroundColor: '#f2f2f2',
+    backgroundColor:'#DBDBDB',
     height: 40,
     marginBottom: 3,
     fontSize: 16,

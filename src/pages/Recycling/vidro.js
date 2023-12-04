@@ -44,6 +44,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
+    backgroundColor:'#DBDBDB',
   },
   text: {
     fontSize: 25,
@@ -56,7 +57,7 @@ const styles = StyleSheet.create({
   },
   input: {
     alignSelf: 'center',
-    backgroundColor: '#f2f2f2',
+    backgroundColor:'#DBDBDB',
     height: 40,
     marginBottom: 3,
     fontSize: 16,
@@ -68,7 +69,7 @@ const styles = StyleSheet.create({
   },
   button: {
     alignSelf: 'center',
-    backgroundColor: '#40916C',
+    backgroundColor:'#DBDBDB',
     width: '85%',
     borderRadius: 10,
     padding: 10,

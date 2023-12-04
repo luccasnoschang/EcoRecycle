@@ -67,7 +67,7 @@ export default function Profile() {
         </View>
       </View>
 
-      <Text style={{ fontSize: 22, fontWeight: "bold", marginLeft: 30, marginBottom: 30, marginTop: 35, }}>Informações da conta</Text>
+      <Text style={{ fontSize: 22, fontWeight: "bold", marginLeft: 30, marginBottom: 30, marginTop: 35,}}>Informações da conta</Text>
 
       <View style={styles.content}>
         <View style={{ marginLeft: 30, }}>
@@ -111,7 +111,7 @@ export default function Profile() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#9EB8AB',
+    backgroundColor: '#77AF93',
     paddingTop: Platform.OS === 'android' ? statusBarHeight : 25,
   },
 

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { View, Text, StyleSheet, TextInput, TouchableOpacity, ScrollView } from "react-native";
 
 import * as Animatable from 'react-native-animatable';
@@ -7,8 +7,65 @@ import { useNavigation } from "@react-navigation/native";
 import api from '../../api'
 
 export default function Register() {
+   
+
     const navigation = useNavigation();
-    
+
+    const [inputName, setInputName] = useState('');
+    const [inputEmail, setInputEmail] = useState('');
+    const [inputSenha, setInputSenha] = useState('');
+    const [inputUnidade, setInputUnidade] = useState('');
+
+    // const mudarCheckbox = (value) => {
+    //     setChecked(value);
+    //     setOpacityBotao(value ? 1 : 0.5);
+    //   };
+
+    //   function verificarImputs(){
+    //     let verificarName = inputName
+    //     let verificarEmail = inputEmail
+    //     let verificarPassword = inputSenha
+
+    //     if(verificarName == '' || verificarName == null || verificarEmail == '' || verificarEmail == null || verificarPassword == '' || verificarPassword == null){
+    //                 console.log('oiiiiiiii')
+    //     }else{
+
+    //         verificarNome()
+        
+    //     }
+
+    //   }
+    const cadastrar = async () => {
+        try {
+            const data = await api.post('/user/new', {
+                nome: inputName,
+                email: inputEmail,
+                password: inputSenha,
+                unidade: inputUnidade,
+                idCondominio: 1,
+            });
+            if (data.status === 200) {
+                navigation.navigate('SignIn')
+                console.log(data)
+                
+            } else {
+                console.log('200000000')
+                console.log(data)
+            }
+        } catch (err) {
+            console.log('100000000')
+            console.log(err);
+        }
+    }
+
+    function verifica() {
+        if (inputName == '' || inputName == null) {
+          alert("Digite um valor")
+        } else {
+          alert("Lixo cadastrado!")
+        }
+      }
+
     return (
         <View style={styles.container}>
             <Animatable.View animation="fadeInLeft" delay={500} style={styles.containerHeader}>
@@ -33,29 +90,37 @@ export default function Register() {
                 <TextInput
                     placeholder="Qual o seu nome?"
                     style={styles.input}
+                    value={inputName}
+                    onChangeText={text => setInputName(text)}
                 />
 
                 <Text style={styles.title}>EMAIL</Text>
                 <TextInput
                     placeholder="Digite um email..."
                     style={styles.input}
+                    value={inputEmail}
+                    onChangeText={text => setInputEmail(text)}
                 />
 
-                <Text style={styles.title}>NÚMERO</Text>
+                <Text style={styles.title}>UNIDADE</Text>
                 <TextInput
-                    placeholder="Digite o número do seu telefone"
+                    placeholder="Digite o número do sua unidade"
                     style={styles.input}
+                    value={inputUnidade}
+                    onChangeText={text => setInputUnidade(text)}
                 />
 
                 <Text style={styles.title}>SENHA</Text>
                 <TextInput
                     placeholder="Sua senha"
                     style={styles.input}
+                    value={inputSenha}
+                    onChangeText={text => setInputSenha(text)}
                 />
 
                 <TouchableOpacity
                     style={styles.button}
-                    onPress={() => navigation.navigate('SignIn')}
+                    onPress={() => cadastrar()}
                 >
                     <Text style={styles.buttonText}>Registrar-se</Text>
                 </TouchableOpacity>

@@ -160,6 +160,7 @@ export default function Organico() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor:'#DBDBDB',
   },
   cards: {
     width: '90%',

@@ -3,7 +3,6 @@ import { StyleSheet, Text, View, ScrollView, StatusBar, SafeAreaView, Platform }
 import BouncyCheckbox from "react-native-bouncy-checkbox";
 import api from '../../api'
 
-
 const statusBarHeight = StatusBar.currentHeight;
 
 import { useNavigation } from '@react-navigation/native';
@@ -26,7 +25,7 @@ export default function Home() {
 
         <Text style={{ fontSize: 45, fontWeight: "bold", marginLeft: 40, }}>0 kg</Text>
 
-        <Text style={{ fontSize: 12, fontWeight: "bold", marginLeft: 40, backgroundColor: '#00BF63', color: '#fff', padding: 3, borderRadius: 40, width: 120, }}>Será automatizado</Text>
+        <Text style={{ fontSize: 12, fontWeight: "bold", marginLeft: 40, backgroundColor: '#40916c', color: '#fff', padding: 3, borderRadius: 40, width: 120, }}>Será automatizado</Text>
 
       </View>
 
@@ -161,7 +160,7 @@ export default function Home() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#66A485',
+    backgroundColor: '#77AF93',
     paddingTop: Platform.OS === 'android' ? statusBarHeight : 25,
   },
 
