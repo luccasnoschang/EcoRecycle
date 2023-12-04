@@ -10,8 +10,6 @@ import { useNavigation } from "@react-navigation/native";
 export default function SignIn({ navigation }) {
     const [inputEmail, setInputEmail] = useState('')
     const [inputSenha, setInputSenha] = useState('')
-    let usuario
-    const [nomeUsuario, setNomeUsuario] = useState('')
 
     const logar = async () => {
         try {
@@ -78,7 +76,7 @@ export default function SignIn({ navigation }) {
                     onChangeText={(text) => setInputSenha(text)}
                 />
 
-                <TouchableOpacity style={styles.button} onPress={() => entrar()}>
+                <TouchableOpacity style={styles.button} onPress={() => logar()}>
                     <Text style={styles.buttonText}>Acessar</Text>
                 </TouchableOpacity>
 
