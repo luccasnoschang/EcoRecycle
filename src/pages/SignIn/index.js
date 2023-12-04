@@ -18,7 +18,7 @@ export default function SignIn({ navigation }) {
                 password: inputSenha,
             });
             if (data.status === 200) {
-                navigation.navigate('Home')
+                navigation.navigate('Routes')
                 console.log(data)
 
             } else {
