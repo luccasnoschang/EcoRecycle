@@ -20,14 +20,8 @@ export default function SignIn({ navigation }) {
                 password: inputSenha,
             });
             if (data.status === 200) {
-
                 navigation.navigate('Home')
                 console.log(data)
-                setNomeUsuario(usuario[0].email)
-               
-                if (usuario[0].email == inputEmail && usuario[0].password == inputSenha) {
-                    navigation.navigate('Home')
-                }
 
             } else {
                 console.log('200000000')
@@ -42,15 +36,12 @@ export default function SignIn({ navigation }) {
         }
     }
 
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
 
     const entrar = () => {
         navigation.reset({
             index: 0,
             routes: [{ name: "Routes" }]
         })
-
     }
 
     return (

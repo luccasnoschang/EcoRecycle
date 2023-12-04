@@ -39,14 +39,6 @@ export default function Register() {
         }
     }
 
-    function verifica() {
-        if (inputName == '' || inputName == null) {
-          alert("Digite um valor")
-        } else {
-          alert("Lixo cadastrado!")
-        }
-      }
-
     return (
         <View style={styles.container}>
             <Animatable.View animation="fadeInLeft" delay={500} style={styles.containerHeader}>
