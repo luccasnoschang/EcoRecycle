@@ -16,25 +16,6 @@ export default function Register() {
     const [inputSenha, setInputSenha] = useState('');
     const [inputUnidade, setInputUnidade] = useState('');
 
-    // const mudarCheckbox = (value) => {
-    //     setChecked(value);
-    //     setOpacityBotao(value ? 1 : 0.5);
-    //   };
-
-    //   function verificarImputs(){
-    //     let verificarName = inputName
-    //     let verificarEmail = inputEmail
-    //     let verificarPassword = inputSenha
-
-    //     if(verificarName == '' || verificarName == null || verificarEmail == '' || verificarEmail == null || verificarPassword == '' || verificarPassword == null){
-    //                 console.log('oiiiiiiii')
-    //     }else{
-
-    //         verificarNome()
-        
-    //     }
-
-    //   }
     const cadastrar = async () => {
         try {
             const data = await api.post('/user/new', {

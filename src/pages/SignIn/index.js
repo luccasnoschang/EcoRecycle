@@ -8,16 +8,49 @@ import api from '../../api'
 import { useNavigation } from "@react-navigation/native";
 
 export default function SignIn({ navigation }) {
+    const [inputEmail, setInputEmail] = useState('')
+    const [inputSenha, setInputSenha] = useState('')
+    let usuario
+    const [nomeUsuario, setNomeUsuario] = useState('')
+
+    const logar = async () => {
+        try {
+            const data = await api.post('/user/find', {
+                email: inputEmail,
+                password: inputSenha,
+            });
+            if (data.status === 200) {
+
+                navigation.navigate('Home')
+                console.log(data)
+                setNomeUsuario(usuario[0].email)
+               
+                if (usuario[0].email == inputEmail && usuario[0].password == inputSenha) {
+                    navigation.navigate('Home')
+                }
+
+            } else {
+                console.log('200000000')
+                console.log(data)
+                alert('Uusário ou senha incorretos!')
+            }
+
+        } catch (err) {
+            console.log('100000000')
+            console.log(err);
+            alert('Uusário ou senha incorretos!')
+        }
+    }
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
     const entrar = () => {
         navigation.reset({
-            index:0,
-            routes: [{name:"Routes"}]
+            index: 0,
+            routes: [{ name: "Routes" }]
         })
-    
+
     }
 
     return (
@@ -38,20 +71,20 @@ export default function SignIn({ navigation }) {
 
                 <Text style={styles.title}>EMAIL</Text>
                 <TextInput
-                    value={email}
                     placeholder="Digite um email..."
                     style={styles.input}
-                    onChangeText={(text) => setEmail(text)}
                     keyboardType="email-address"
+                    value={inputEmail}
+                    onChangeText={(text) => setInputEmail(text)}
                 />
 
                 <Text style={styles.title}>SENHA</Text>
                 <TextInput
-                    value={password}
                     placeholder="Sua senha"
                     style={styles.input}
-                    onChangeText={(text) => setPassword(text)}
                     secureTextEntry={true}
+                    value={inputSenha}
+                    onChangeText={(text) => setInputSenha(text)}
                 />
 
                 <TouchableOpacity style={styles.button} onPress={() => entrar()}>
