@@ -1,13 +1,14 @@
 import React, { useState } from "react";
-import { View, Text, StyleSheet, TextInput, TouchableOpacity, ScrollView } from "react-native";
+import { View, Text, StyleSheet, TextInput, TouchableOpacity, ScrollView, KeyboardAvoidingView, Platform } from "react-native";
 
 import * as Animatable from 'react-native-animatable';
 
 import { useNavigation } from "@react-navigation/native";
 import api from '../../api'
+import { SafeAreaView } from "react-native-safe-area-context";
 
 export default function Register() {
-   
+
 
     const navigation = useNavigation();
 
@@ -28,7 +29,7 @@ export default function Register() {
             if (data.status === 200) {
                 navigation.navigate('SignIn')
                 console.log(data)
-                
+
             } else {
                 console.log('200000000')
                 console.log(data)
@@ -37,6 +38,7 @@ export default function Register() {
             console.log('100000000')
             console.log(err);
         }
+        alert("usuário cadastrado!")
     }
 
     return (
@@ -44,64 +46,72 @@ export default function Register() {
             <Animatable.View animation="fadeInLeft" delay={500} style={styles.containerHeader}>
             </Animatable.View>
 
-            {/* <ScrollView> */}
             <Animatable.View animation="fadeInUp" style={styles.containerForm}>
-                <Text style={styles.message}>Crie uma nova conta</Text>
 
-                <View style={styles.registerText}>
-                    <Text style={{ color: '#a1a1a1',}}></Text>
-                    <TouchableOpacity
-                        style={styles.buttonRegister}
-                        onPress={() => navigation.navigate('SignIn')}
-                    >
-                        <Text style={styles.registerText}>possui uma conta? Entre aqui</Text>
-                    </TouchableOpacity>
-                </View>
-
-
-                <Text style={styles.title}>NOME</Text>
-                <TextInput
-                    placeholder="Qual o seu nome?"
-                    style={styles.input}
-                    value={inputName}
-                    onChangeText={text => setInputName(text)}
-                />
-
-                <Text style={styles.title}>EMAIL</Text>
-                <TextInput
-                    placeholder="Digite um email..."
-                    style={styles.input}
-                    value={inputEmail}
-                    onChangeText={text => setInputEmail(text)}
-                />
-
-                <Text style={styles.title}>UNIDADE</Text>
-                <TextInput
-                    placeholder="Digite o número do sua unidade"
-                    style={styles.input}
-                    value={inputUnidade}
-                    onChangeText={text => setInputUnidade(text)}
-                />
-
-                <Text style={styles.title}>SENHA</Text>
-                <TextInput
-                    placeholder="Sua senha"
-                    style={styles.input}
-                    value={inputSenha}
-                    onChangeText={text => setInputSenha(text)}
-                />
-
-                <TouchableOpacity
-                    style={styles.button}
-                    onPress={() => cadastrar()}
+                <KeyboardAvoidingView
+                    styles={styles.flexStyle}
+                    enabled={true}
+                    behavior={Platform.OS == "ios" ? "padding" : "height"}
+                    keyboardVerticalOffset={80}
                 >
-                    <Text style={styles.buttonText}>Registrar-se</Text>
-                </TouchableOpacity>
+                    <ScrollView styles={styles.flexStyle}>
+
+                        <Text style={styles.message}>Crie uma nova conta</Text>
+
+                        <View style={styles.registerText}>
+                            <Text style={{ color: '#a1a1a1', }}></Text>
+                            <TouchableOpacity
+                                style={styles.buttonRegister}
+                                onPress={() => navigation.navigate('SignIn')}
+                            >
+                                <Text style={styles.registerText}>possui uma conta? Entre aqui</Text>
+                            </TouchableOpacity>
+                        </View>
 
 
+                        <Text style={styles.title}>NOME</Text>
+                        <TextInput
+                            placeholder="Qual o seu nome?"
+                            style={styles.input}
+                            value={inputName}
+                            onChangeText={text => setInputName(text)}
+                        />
+
+                        <Text style={styles.title}>EMAIL</Text>
+                        <TextInput
+                            placeholder="Digite um email..."
+                            style={styles.input}
+                            value={inputEmail}
+                            onChangeText={text => setInputEmail(text)}
+                        />
+
+                        <Text style={styles.title}>UNIDADE</Text>
+                        <TextInput
+                            placeholder="Digite o número do sua unidade"
+                            style={styles.input}
+                            value={inputUnidade}
+                            onChangeText={text => setInputUnidade(text)}
+                        />
+
+                        <Text style={styles.title}>SENHA</Text>
+                        <TextInput
+                            placeholder="Sua senha"
+                            style={styles.input}
+                            value={inputSenha}
+                            onChangeText={text => setInputSenha(text)}
+                        />
+
+                        <TouchableOpacity
+                            style={styles.button}
+                            onPress={() => cadastrar()}
+                        >
+                            <Text style={styles.buttonText}>Registrar-se</Text>
+                        </TouchableOpacity>
+
+                    </ScrollView>
+                </KeyboardAvoidingView>
             </Animatable.View>
-            {/* </ScrollView> */}
-        </View>
+        </View >
     );
 }
 
@@ -116,8 +126,8 @@ const styles = StyleSheet.create({
         paddingStart: '5%',
     },
     message: {
-        textAlign:'center',
-        width:230,
+        textAlign: 'center',
+        width: 230,
         alignSelf: 'center',
         marginTop: 40,
         fontSize: 35,
@@ -145,8 +155,8 @@ const styles = StyleSheet.create({
         fontSize: 16,
         borderRadius: 15,
         width: '85%',
-        padding: 25,
-        color:'#8F8E8E',
+        paddingRight: 25,
+        paddingLeft: 25,
     },
     button: {
         alignSelf: 'center',
@@ -168,6 +178,9 @@ const styles = StyleSheet.create({
     },
     registerText: {
         color: '#a1a1a1',
-        fontSize:12,
+        fontSize: 12,
     },
+    flexStyle:{
+        flex:1,
+    }
 })

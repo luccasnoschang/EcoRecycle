@@ -10,6 +10,7 @@ import { useNavigation } from "@react-navigation/native";
 export default function SignIn({ navigation }) {
     const [inputEmail, setInputEmail] = useState('')
     const [inputSenha, setInputSenha] = useState('')
+    let usuario
 
     const logar = async () => {
         try {
@@ -18,8 +19,16 @@ export default function SignIn({ navigation }) {
                 password: inputSenha,
             });
             if (data.status === 200) {
-                navigation.navigate('Routes')
                 console.log(data)
+                usuario = data.data
+                console.log(usuario)
+
+                if (usuario[0].email == inputEmail && usuario[0].password == inputSenha) {
+                    navigation.navigate('Routes')
+                }
+                else {
+                    console.log("não")
+                }
 
             } else {
                 console.log('200000000')
@@ -131,8 +140,8 @@ const styles = StyleSheet.create({
         fontSize: 16,
         borderRadius: 15,
         width: '85%',
-        padding: 25,
-        color: '#8F8E8E',
+        paddingRight: 25,
+        paddingLeft: 25,
     },
     button: {
         alignSelf: 'center',

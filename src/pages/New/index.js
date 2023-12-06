@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, TouchableOpacity, Image } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, Image, TextInput, ScrollView } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { SafeAreaView } from 'react-native';
 import { Feather } from '@expo/vector-icons';
+import api from '../../api'
+
 
 export default function Organico() {
   const navigation = useNavigation();
@@ -13,143 +15,174 @@ export default function Organico() {
   const [plasticos, setPlasticos] = useState(require('../../../assets/img/plastico.png'))
   const [vidros, setVidros] = useState(require('../../../assets/img/vidro.png'))
 
+  const [inputPapeis, setInputPapeis] = useState('');
+  const [inputOrganicos, setInputOrganicos] = useState('');
+  const [inputEletronicos, setInputEletronicos] = useState('');
+  const [inputMetais, setInputMetais] = useState('');
+  const [inputPlasticos, setInputPlasticos] = useState('');
+  const [inputVidros, setInputVidros] = useState('');
+
+  const cadastrar = async () => {
+    try {
+      const data = await api.post('/lixo/new', {
+        metal: inputMetais,
+        plastico: inputPlasticos,
+        papel: inputPapeis,
+        organico: inputOrganicos,
+        vidro: inputVidros,
+        eletronico: inputEletronicos,
+        total_lixo: 0,
+        data: '2023-12-07',
+        idUser: 1,
+      });
+      if (data.status === 200) {
+        console.log(data)
+
+      } else {
+        console.log('200000000')
+        console.log(data)
+      }
+    } catch (err) {
+      console.log('100000000')
+      console.log(err);
+    }
+    alert("lixo cadastrado!")
+  }
+
+
   return (
     <View style={styles.container}>
 
       <Text style={styles.text}>Cadastre seus lixos aqui</Text>
 
       <SafeAreaView style={styles.containerCards}>
+
         <View style={styles.cards}>
-          <View style={styles.content}>
-            <Image
-              source={papeis}
-              style={styles.icon}
-            />
+        
+          <ScrollView style={{height:'80%',}}>
 
-            <TouchableOpacity style={styles.botao} onPress={() => navigation.navigate('Papel')}>
-              <Text style={styles.textCadastro}>
-                Ir para Papeis
-              </Text>
-            </TouchableOpacity>
-
-            <TouchableOpacity style={styles.arrow} onPress={() => navigation.navigate('Papel')}>
-              <Feather
-                name="arrow-right"
-                size={20}
-                style={{color: '#40916c',}}
+            <View style={styles.content}>
+              <Image
+                source={papeis}
+                style={styles.icon}
               />
-            </TouchableOpacity>
-          </View>
 
-
-          <View style={styles.content}>
-            <Image
-              source={organicos}
-              style={styles.icon}
-            />
-
-            <TouchableOpacity style={styles.botao} onPress={() => navigation.navigate('Organico')}>
               <Text style={styles.textCadastro}>
-                Ir para Organicos
+                Papeis
               </Text>
-            </TouchableOpacity>
 
-            <TouchableOpacity style={styles.arrow} onPress={() => navigation.navigate('Organico')}>
-              <Feather
-                name="arrow-right"
-                size={20}
-                style={{color: '#40916c',}}
+              <TextInput
+                placeholder="''0''"
+                style={styles.input}
+                value={inputPapeis}
+                onChangeText={text => setInputPapeis(text)}
               />
-            </TouchableOpacity>
-          </View>
+
+            </View>
 
 
-          <View style={styles.content}>
-            <Image
-              source={eletronicos}
-              style={styles.icon}
-            />
+            <View style={styles.content}>
+              <Image
+                source={organicos}
+                style={styles.icon}
+              />
 
-            <TouchableOpacity style={styles.botao} onPress={() => navigation.navigate('Eletronico')}>
               <Text style={styles.textCadastro}>
-                Ir para Eletrônicos
+                Organicos
               </Text>
-            </TouchableOpacity>
-            
-            <TouchableOpacity style={styles.arrow} onPress={() => navigation.navigate('Eletronico')}>
-              <Feather
-                name="arrow-right"
-                size={20}
-                style={{color: '#40916c',}}
+
+              <TextInput
+                placeholder="''3''"
+                style={styles.input}
+                value={inputOrganicos}
+                onChangeText={text => setInputOrganicos(text)}
               />
-            </TouchableOpacity>
-          </View>
+            </View>
 
 
-          <View style={styles.content}>
-            <Image
-              source={metais}
-              style={styles.icon}
-            />
+            <View style={styles.content}>
+              <Image
+                source={eletronicos}
+                style={styles.icon}
+              />
 
-            <TouchableOpacity style={styles.botao} onPress={() => navigation.navigate('Metal')}>
               <Text style={styles.textCadastro}>
-                Ir para Metal
+                Eletrônicos
               </Text>
-            </TouchableOpacity>
 
-            <TouchableOpacity style={styles.arrow} onPress={() => navigation.navigate('Metal')}>
-              <Feather
-                name="arrow-right"
-                size={20}
-                style={{color: '#40916c',}}
+              <TextInput
+                placeholder="''0''"
+                style={styles.input}
+                value={inputEletronicos}
+                onChangeText={text => setInputEletronicos(text)}
               />
-            </TouchableOpacity>
-          </View>
+            </View>
 
 
-          <View style={styles.content}>
-            <Image
-              source={plasticos}
-              style={styles.icon}
-            />
+            <View style={styles.content}>
+              <Image
+                source={metais}
+                style={styles.icon}
+              />
 
-            <TouchableOpacity style={styles.botao} onPress={() => navigation.navigate('Plastico')}>
+
               <Text style={styles.textCadastro}>
-                Ir para Plástico
+                Metais
               </Text>
-            </TouchableOpacity>
 
-            <TouchableOpacity style={styles.arrow} onPress={() => navigation.navigate('Plastico')}>
-              <Feather
-                name="arrow-right"
-                size={20}
-                style={{color: '#40916c',}}
+              <TextInput
+                placeholder="''2''"
+                style={styles.input}
+                value={inputMetais}
+                onChangeText={text => setInputMetais(text)}
               />
-            </TouchableOpacity>
-          </View>
+            </View>
 
 
-          <View style={styles.content}>
-            <Image
-              source={vidros}
-              style={styles.icon}
-            />
+            <View style={styles.content}>
+              <Image
+                source={plasticos}
+                style={styles.icon}
+              />
 
-            <TouchableOpacity style={styles.botao} onPress={() => navigation.navigate('Vidro')}>
               <Text style={styles.textCadastro}>
-                Ir para Vidro
+                Plásticos
               </Text>
-            </TouchableOpacity>
 
-            <TouchableOpacity style={styles.arrow} onPress={() => navigation.navigate('Vidro')}>
-              <Feather
-                name="arrow-right"
-                size={20}
-                style={{color: '#40916c',}}
+              <TextInput
+                placeholder="''1''"
+                style={styles.input}
+                value={inputPlasticos}
+                onChangeText={text => setInputPlasticos(text)}
               />
-            </TouchableOpacity>
-          </View>
+
+            </View>
+
+
+            <View style={styles.content}>
+              <Image
+                source={vidros}
+                style={styles.icon}
+              />
+
+              <Text style={styles.textCadastro}>
+                Vidros
+              </Text>
+
+              <TextInput
+                placeholder="''1''"
+                style={styles.input}
+                value={inputVidros}
+                onChangeText={text => setInputVidros(text)}
+              />
+
+            </View>
+
+          </ScrollView>
+
+          <TouchableOpacity style={styles.button} onPress={() => cadastrar()}>
+            <Text style={styles.buttonText}>Cadastrar</Text>
+          </TouchableOpacity>
 
         </View>
       </SafeAreaView>
@@ -160,58 +193,75 @@ export default function Organico() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor:'#DBDBDB',
+    backgroundColor: '#DBDBDB',
   },
   cards: {
     width: '90%',
     alignSelf: 'center',
     justifyContent: 'center',
     alignItems: 'center',
-    gap: 10,
-    marginBottom: 35,
+    gap: 20,
+    marginBottom: 60,
   },
   text: {
     alignSelf: 'center',
-    marginTop: 100,
+    marginTop: 90,
     fontSize: 25,
     fontWeight: 'bold',
     color: '#40916c',
   },
   content: {
-    width: '100%',
+    width: 350,
     alignSelf: 'center',
-    height: 90,
+    height: 110,
     marginBottom: 5,
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
     borderRadius: 20,
     marginTop: 5,
-    flexDirection: 'row',
-    gap: 40,
+    flexDirection: 'column',
+    gap: 15,
   },
   containerCards: {
     alignItems: 'center',
     justifyContent: 'center',
     flex: 1,
   },
-  arrow: {
-    position: 'absolute',
-    right: 30,
-  },
   icon: {
     width: 50,
     height: 50,
     position: 'absolute',
-    right: 300,
+    right: 240,
   },
   textCadastro: {
     fontSize: 18,
-    position: 'absolute',
-    left: -65,
-    top: -10,
+    alignSelf: 'center',
+    marginLeft:30,
+  },
+  input: {
+    backgroundColor: '#DBDBDB',
+    height: 30,
+    fontSize: 16,
+    borderRadius: 10,
+    width: 100,
+    textAlign: 'center',
+    marginLeft:30,
+  },
+  button: {
+    alignSelf: 'center',
+    backgroundColor: '#40916C',
+    width: '85%',
+    borderRadius: 10,
+    padding: 10,
+    marginTop: 14,
+    justifyContent: 'center',
     alignItems: 'center',
-    width:200,
+  },
+  buttonText: {
+    color: '#fff',
+    fontSize: '18',
+    fontWeight: 'bold',
   },
 
 });
