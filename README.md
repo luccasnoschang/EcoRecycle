@@ -5,7 +5,7 @@ O EcoRecycle é um projeto MVP de um aplicativo mobile gamificado desenvolvido e
 ### Tópicos
 - [Páginas do Aplicativo](#páginas-do-aplicativo)
 
-- [Instruções de Instalação e Execução](#tópicos)
+- [Instruções de Instalação e Execução](#instruções-de-instalação-e-execução)
 
 ## Páginas do Aplicativo
 
