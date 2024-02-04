@@ -70,6 +70,7 @@ Utilizamos Expo para a criação do aplicativo. Caso você queira rodar no seu c
 1. Clone o repositório BackEnd: `https://github.com/luccasnoschang/EcoRecycle_Back-End.git`
 2. Instale as dependências: `npm install`
 3. Execute o aplicativo: `nodemon index.js`
+4. Na parte Front-End, vá para a pasta *API*, e mude para o seu IP. você pode descobrir o seu ip utilizando `ipconfig` no terminal.
 
 <br>
 
