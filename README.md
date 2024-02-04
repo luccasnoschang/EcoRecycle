@@ -37,8 +37,8 @@ O EcoRecycle é um projeto MVP de um aplicativo mobile gamificado desenvolvido e
 - Ao realizar o cadastro, o usuário recebe pontuações e troféus, que são exibidos em seu perfil.
 
 <div align="center">
-<img src="https://github.com/luccasnoschang/EcoRecycle/assets/105743541/723f06f3-d87d-4e00-b183-cc7b8edae2a1" width="200px"/>
-<img src="https://github.com/luccasnoschang/EcoRecycle/assets/105743541/824e47e3-214c-419b-8b5c-4da676695d09" width="200px"/>
+<img src="https://github.com/luccasnoschang/EcoRecycle/assets/105743541/723f06f3-d87d-4e00-b183-cc7b8edae2a1" width="300px"/>
+<img src="https://github.com/luccasnoschang/EcoRecycle/assets/105743541/824e47e3-214c-419b-8b5c-4da676695d09" width="300px"/>
 </div>
 
 ### 4. Perfil
