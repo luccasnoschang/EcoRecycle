@@ -41,11 +41,38 @@ O EcoRecycle é um projeto MVP de um aplicativo mobile gamificado desenvolvido e
 
 ---
 
-**Instruções de Instalação e Execução:**
-1. Clone o repositório: `git clone https://github.com/luccasnoschang/EcoRecycle.git`
-2. Instale as dependências: `npm install`
-3. Execute o aplicativo: `npm start`
+## Instruções de Instalação e Execução
 
+Utilizamos Expo para a criação do aplicativo. Caso você queira rodar no seu celular, instale o aplicativo "Expo Go".
+
+1. Clone o repositório: `git clone https://github.com/luccasnoschang/EcoRecycle.git`
+3. Instale as dependências: `npm install`
+4. Execute o aplicativo: `npx expo start`
+<br>
+
+- Para rodar na web, pressione `W`
+- Para rodar no seu celular, leia o QR Code
+- Se não estiver ambos os dispositivos não estiverem conectado na mesma internet, é necessario utilizar `--tunnel` após o comando **4**
+
+<br>
+
+*No momento, a parte BackEnd da aplicação, ainda não foi lançada. Caso queira roda-lo na sua própria máquina, siga as seguintes instruções*
+
+<br>
+
+1. Clone o repositório BackEnd: `https://github.com/luccasnoschang/EcoRecycle_Back-End.git`
+2. Instale as dependências: `npm install`
+3. Execute o aplicativo: `nodemon index.js`
+
+<br>
+
+*Também é necessário introduzir um simples banco de dados na sua máquina!*
+
+`...
+...
+...
+...`
+   
 **Contribuições são bem-vindas!**
 
 Esperamos que o EcoRecycle seja uma ferramenta eficaz para incentivar práticas sustentáveis em condomínios. Agradecemos pela sua contribuição!
