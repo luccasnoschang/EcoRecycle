@@ -53,13 +53,13 @@ O EcoRecycle é um projeto MVP de um aplicativo mobile gamificado desenvolvido e
 Utilizamos Expo para a criação do aplicativo. Caso você queira rodar no seu celular, instale o aplicativo "Expo Go".
 
 1. Clone o repositório: `git clone https://github.com/luccasnoschang/EcoRecycle.git`
-3. Instale as dependências: `npm install`
-4. Execute o aplicativo: `npx expo start`
+2. Instale as dependências: `npm install`
+3. Execute o aplicativo: `npx expo start`
 <br>
 
 - Para rodar na web, pressione `W`
 - Para rodar no seu celular, leia o QR Code
-- Se não estiver ambos os dispositivos não estiverem conectado na mesma internet, é necessario utilizar `--tunnel` após o comando **4**
+- Se não estiver ambos os dispositivos não estiverem conectado na mesma internet, é necessario utilizar `--tunnel` após o comando **3**
 
 <br>
 
