@@ -2,6 +2,11 @@
 
 O EcoRecycle é um projeto MVP de um aplicativo mobile gamificado desenvolvido em React Native, com o objetivo de incentivar a reciclagem em condomínios. Os moradores podem pontuar no aplicativo ao cadastrar suas reciclagens, ganhando troféus e acompanhando seu progresso ambiental.
 
+### Tópicos
+- [Páginas do Aplicativo](#https://github.com/luccasnoschang/EcoRecycle?tab=readme-ov-file#p%C3%A1ginas-do-aplicativo)
+
+- [Instruções de Instalação e Execução](#https://github.com/luccasnoschang/EcoRecycle?tab=readme-ov-file#instru%C3%A7%C3%B5es-de-instala%C3%A7%C3%A3o-e-execu%C3%A7%C3%A3o)
+
 ## Páginas do Aplicativo
 
 ### 1. Cadastro e Login
@@ -68,10 +73,12 @@ Utilizamos Expo para a criação do aplicativo. Caso você queira rodar no seu c
 
 *Também é necessário introduzir um simples banco de dados na sua máquina!*
 
-`...
-...
-...
-...`
+```
+... ... ... ...
+... ... ... ...
+... ... ... ...
+... ... ... ...
+```
    
 **Contribuições são bem-vindas!**
 
