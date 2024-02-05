@@ -59,7 +59,7 @@ Utilizamos Expo para a criação do aplicativo. Caso você queira rodar no seu c
 
 - Para rodar na web, pressione `W`
 - Para rodar no seu celular, leia o QR Code
-- Se não estiver ambos os dispositivos não estiverem conectado na mesma internet, é necessario utilizar `--tunnel` após o comando **3**
+- Se ambos os dispositivos não estiverem conectado na mesma internet, é necessario utilizar `--tunnel` após a instrução **3**
 
 <br>
 
