@@ -77,10 +77,14 @@ Utilizamos Expo para a criação do aplicativo. Caso você queira rodar no seu c
 *Também é necessário introduzir um simples banco de dados na sua máquina!*
 
 ```
-... ... ... ...
-... ... ... ...
-... ... ... ...
-... ... ... ...
+CREATE DATABASE ecoCond;
+
+CREATE USER 'ecocond'@'localhost' IDENTIFIED BY '123';
+ 
+GRANT ALL PRIVILEGES ON ecoCond.* TO 'ecocond'@'localhost';
+
+use ecoCond; 
+select 1+1;
 ```
    
 **Contribuições são bem-vindas!**
